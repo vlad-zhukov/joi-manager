@@ -1,6 +1,6 @@
 joi-manager
 ===========
-> Manage Joi schemes with joy.
+> Manage Joi schemas with joy.
 
 ## API
 ### `new JoiManager([defaultOptions])`
