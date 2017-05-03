@@ -1,0 +1,58 @@
+{
+  "name": "joi-manager",
+  "version": "1.0.0-alpha.1",
+  "description": "Manage Joi schemes with joy.",
+  "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vlad-Zhukov/joi-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/Vlad-Zhukov/joi-manager/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./es/index.js",
+  "jsnext:main": "./es/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint \"**/*.js\"",
+    "prettier": "prettier-eslint --write \"**/*.js\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelrc-rollup": "^3.0.0",
+    "bluebird": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^19.0.2",
+    "joi": "^10.4.1",
+    "prettier-eslint-cli": "^3.4.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1"
+  },
+  "peerDependencies": {
+    "bluebird": "^3.5.0",
+    "joi": "^10.4.1"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "src",
+    "dist",
+    "es"
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/__tests__/"
+    ]
+  }
+}
