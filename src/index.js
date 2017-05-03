@@ -28,7 +28,7 @@ export default class JoiManager {
         }
 
         if (schema == null) {
-            throw new TypeError(`Argument "schema" is required.`);
+            throw new TypeError('Argument "schema" is required.');
         }
 
         if (this.schemaList.hasOwnProperty(schemaName)) {

@@ -12,7 +12,7 @@ describe('It should construct', () => {
         expect(new JoiManager()).toBeInstanceOf(JoiManager);
         expect(new JoiManager(OBJECT__)).toBeInstanceOf(JoiManager);
         expect(new JoiManager({joi: STRING__})).toBeInstanceOf(JoiManager);
-        expect(new JoiManager(new Error)).toBeInstanceOf(JoiManager);
+        expect(new JoiManager(new Error())).toBeInstanceOf(JoiManager);
 
         expect(new JoiManager(OBJECT__).defaultOptions).toBe(OBJECT__);
 
@@ -94,7 +94,7 @@ describe('It should have "add" method', () => {
         expect(joiManager.schemaList).toHaveProperty(schemaName2, schema);
 
         done();
-    })
+    });
 });
 
 describe('It should have "get" method', () => {
@@ -142,9 +142,12 @@ describe('It should have "get" method', () => {
         joiManager.add(schemaName, schema);
 
         expect(() =>
-            joiManager.add(nestedSchemaName, Joi.object({
-                number: joiManager.get(schemaName),
-            }))
+            joiManager.add(
+                nestedSchemaName,
+                Joi.object({
+                    number: joiManager.get(schemaName),
+                })
+            )
         ).not.toThrow();
 
         expect(joiManager.schemaList).toHaveProperty(schemaName, schema);
@@ -163,24 +166,22 @@ describe('It should have "validate" method', () => {
         const joiManager = new JoiManager();
         joiManager.add(schemaName, schema);
 
-        joiManager.validate(correctValue, schemaName)
-            .then((value) => {
-                expect(value).toBe(correctValue);
+        joiManager.validate(correctValue, schemaName).then((value) => {
+            expect(value).toBe(correctValue);
 
-                done();
-            });
+            done();
+        });
     });
 
     test('it should reject a promise if validation failed', (done) => {
         const joiManager = new JoiManager();
         joiManager.add(schemaName, schema);
 
-        joiManager.validate(NUMBER__, schemaName)
-            .catch((error) => {
-                expect(error).toBeInstanceOf(Error);
+        joiManager.validate(NUMBER__, schemaName).catch((error) => {
+            expect(error).toBeInstanceOf(Error);
 
-                done();
-            });
+            done();
+        });
     });
 
     test('it should throw if a schema with provided name was not added to the list', (done) => {
