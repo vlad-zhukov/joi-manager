@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import JoiManager from '../src/index';
+import JoiManager from '../src/';
 
 const NUMBER__ = 12345;
 const STRING__ = 'boo!';
