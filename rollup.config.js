@@ -1,3 +1,5 @@
+/* eslint-disable import/first, import/extensions */
+
 process.env.NODE_ENV = 'development';
 
 import babel from 'rollup-plugin-babel';

@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+
 const JoiManager = require('../cjs/');
 
 const NUMBER__ = 12345;

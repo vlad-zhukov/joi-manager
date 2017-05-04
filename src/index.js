@@ -31,6 +31,7 @@ export default class JoiManager {
             throw new TypeError('Argument "schema" is required.');
         }
 
+        // eslint-disable-next-line no-prototype-builtins
         if (this.schemaList.hasOwnProperty(schemaName)) {
             throw new Error(`Schema with name "${schemaName}" already exists in the list.`);
         }
@@ -49,6 +50,7 @@ export default class JoiManager {
             throw new TypeError(`Argument "schemaName" expected to be a string, but got ${typeof schemaName}.`);
         }
 
+        // eslint-disable-next-line no-prototype-builtins
         if (!this.schemaList.hasOwnProperty(schemaName)) {
             throw new Error(`Schema with name "${schemaName}" was not found in the list.`);
         }
@@ -58,10 +60,10 @@ export default class JoiManager {
 
     /**
      * Promisified wrapper around Joi.validate().
-     * @param value {Object}
+     * @param value {*}
      * @param schemaName {String}
      * @param options {Object}
-     * @return {bluebird<Object|Error>}
+     * @return {Promise<*>}
      */
     validate(value, schemaName, options = {}) {
         if (options === null || typeof options !== 'object') {
