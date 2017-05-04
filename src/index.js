@@ -1,7 +1,7 @@
 import bluebird from 'bluebird';
-import Joi from 'joi';
+import {validate} from 'joi';
 
-const validateAsync = bluebird.promisify(Joi.validate);
+const validateAsync = bluebird.promisify(validate);
 
 export default class JoiManager {
     /**
