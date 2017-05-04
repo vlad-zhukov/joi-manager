@@ -19,8 +19,7 @@ export default {
     targets: [
         {
             dest: pkg.main,
-            format: 'umd',
-            moduleName: 'joi-manager',
+            format: 'cjs',
             sourceMap: true,
         },
         {
@@ -31,8 +30,4 @@ export default {
     ],
 
     external: Object.keys(pkg.peerDependencies),
-    globals: {
-        bluebird: 'bluebird',
-        joi: 'Joi',
-    },
 };

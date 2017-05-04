@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/Vlad-Zhukov/joi-manager/issues"
   },
-  "main": "./dist/index.js",
+  "main": "./cjs/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
   "scripts": {
@@ -47,7 +47,7 @@
   },
   "files": [
     "src",
-    "dist",
+    "cjs",
     "es"
   ],
   "jest": {
