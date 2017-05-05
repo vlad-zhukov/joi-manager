@@ -45,6 +45,12 @@
   "engines": {
     "node": ">=6"
   },
+  "keywords": [
+    "joi",
+    "joi-validation",
+    "validation",
+    "schema"
+  ],
   "files": [
     "src",
     "cjs",
