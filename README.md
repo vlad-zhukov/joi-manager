@@ -1,4 +1,4 @@
-joi-manager · [![npm](https://img.shields.io/npm/v/joi-manager.svg)]()
+joi-manager · [![npm](https://img.shields.io/npm/v/joi-manager.svg)](https://www.npmjs.com/package/joi-manager)
 ===========
 > Manage Joi schemas with joy.
 
