@@ -1,13 +1,10 @@
 {
   "name": "joi-manager",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Manage Joi schemas with joy.",
   "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Vlad-Zhukov/joi-manager"
-  },
+  "repository": "Vlad-Zhukov/joi-manager",
   "bugs": {
     "url": "https://github.com/Vlad-Zhukov/joi-manager/issues"
   },
@@ -42,7 +39,7 @@
     "joi": "^10.4.1"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">= 6"
   },
   "keywords": [
     "joi",
