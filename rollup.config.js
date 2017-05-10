@@ -1,22 +1,12 @@
-/* eslint-disable import/first, import/extensions */
-
 process.env.NODE_ENV = 'development';
 
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
-
+const babel = require('rollup-plugin-babel');
 const pkg = require('./package.json');
 
 export default {
     entry: './src/index.js',
 
-    plugins: [
-        babel(
-            babelrc({
-                addModuleOptions: false,
-            })
-        ),
-    ],
+    plugins: [babel()],
 
     targets: [
         {
