@@ -3,7 +3,7 @@ parser: babel-eslint
 extends: airbnb-base
 
 env:
-    shared-node-browser: true
+    node: true
     jest: true
 
 rules:

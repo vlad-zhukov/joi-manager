@@ -14,13 +14,12 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
-    "lint": "eslint \"**/*.js\"",
-    "prettier": "prettier-eslint --write \"**/*.js\""
+    "lint": "eslint **/*.js",
+    "prettier": "prettier-eslint --write **/*.js"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-stage-0": "^6.24.1",
@@ -28,15 +27,15 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
     "eslint-plugin-import": "^2.2.0",
-    "jest": "^20.0.0",
-    "joi": "^10.4.1",
+    "jest": "^20.0.1",
+    "joi": "^10.4.2",
     "prettier-eslint-cli": "^3.4.3",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1"
   },
   "peerDependencies": {
-    "bluebird": "^3.5.0",
-    "joi": "^10.4.1"
+    "bluebird": "^3",
+    "joi": "^10"
   },
   "engines": {
     "node": ">= 6"
