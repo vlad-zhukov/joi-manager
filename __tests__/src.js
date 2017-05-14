@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 
 import Joi from 'joi';
-import JoiManager from '../src/';
+import JoiManager from '../src/joi-manager';
 
 const NUMBER__ = 12345;
 const STRING__ = 'boo!';
