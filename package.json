@@ -8,9 +8,9 @@
   "bugs": {
     "url": "https://github.com/Vlad-Zhukov/joi-manager/issues"
   },
-  "main": "./cjs/index.js",
-  "module": "./es/index.js",
-  "jsnext:main": "./es/index.js",
+  "main": "./dist/joi-manager.cjs.js",
+  "module": "./dist/joi-manager.es.js",
+  "jsnext:main": "./dist/joi-manager.es.js",
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
@@ -49,8 +49,7 @@
   ],
   "files": [
     "src",
-    "cjs",
-    "es"
+    "dist"
   ],
   "jest": {
     "roots": [

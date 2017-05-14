@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-import JoiManager from '../cjs/';
+import JoiManager from '../dist/joi-manager.es';
 
 const NUMBER__ = 12345;
 const STRING__ = 'boo!';

@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-const JoiManager = require('../cjs/');
+const JoiManager = require('../dist/joi-manager.cjs');
 
 const NUMBER__ = 12345;
 const STRING__ = 'boo!';
