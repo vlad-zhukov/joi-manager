@@ -1,7 +1,4 @@
-import bluebird from 'bluebird';
-import {validate} from 'joi';
-
-const validateAsync = bluebird.promisify(validate);
+import Joi from 'joi';
 
 export default class JoiManager {
     /**
@@ -59,17 +56,23 @@ export default class JoiManager {
     }
 
     /**
-     * Promisified wrapper around Joi.validate().
+     * Wrapper around Joi.validate() that throws on validation errors.
      * @param value {*}
      * @param schemaName {String}
      * @param options {Object}
-     * @return {Promise<*>}
+     * @return {*}
      */
     validate(value, schemaName, options = {}) {
         if (options === null || typeof options !== 'object') {
             throw new TypeError('Argument "options" expected to be an object.');
         }
 
-        return validateAsync(value, this.get(schemaName), {...this.defaultOptions, ...options});
+        const result = Joi.validate(value, this.get(schemaName), {...this.defaultOptions, ...options});
+
+        if (result.error !== null) {
+            throw new Error(result.error.message);
+        }
+
+        return result.value;
     }
 }
