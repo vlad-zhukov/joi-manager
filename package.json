@@ -1,6 +1,6 @@
 {
   "name": "joi-manager",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0",
   "description": "Manage Joi schemas with joy.",
   "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "jest",
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier-eslint \"**/*.js\" --write ",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn lint && yarn run && yarn test"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
