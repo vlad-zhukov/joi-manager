@@ -1,6 +1,6 @@
 {
   "name": "joi-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Manage Joi schemas with joy.",
   "author": "Vlad Zhukov (http://github.com/vlad-zhukov)",
   "license": "MIT",
