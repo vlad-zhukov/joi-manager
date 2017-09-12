@@ -67,7 +67,7 @@ export default class JoiManager {
             throw new TypeError('Argument "options" expected to be an object.');
         }
 
-        const result = Joi.validate(value, this.get(schemaName), {...this.defaultOptions, ...options});
+        const result = Joi.validate(value, this.get(schemaName), Object.assign({}, this.defaultOptions, options));
 
         if (result.error !== null) {
             throw new Error(result.error.message);
