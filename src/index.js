@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import * as Joi from 'joi';
 
 export default class JoiManager {
     /**
@@ -28,8 +28,7 @@ export default class JoiManager {
             throw new TypeError('Argument "schema" is required.');
         }
 
-        // eslint-disable-next-line no-prototype-builtins
-        if (this.schemaList.hasOwnProperty(schemaName)) {
+        if ({}.hasOwnProperty.call(this.schemaList, schemaName)) {
             throw new Error(`Schema with name "${schemaName}" already exists in the list.`);
         }
 
@@ -47,8 +46,7 @@ export default class JoiManager {
             throw new TypeError(`Argument "schemaName" expected to be a string, but got ${typeof schemaName}.`);
         }
 
-        // eslint-disable-next-line no-prototype-builtins
-        if (!this.schemaList.hasOwnProperty(schemaName)) {
+        if (!{}.hasOwnProperty.call(this.schemaList, schemaName)) {
             throw new Error(`Schema with name "${schemaName}" was not found in the list.`);
         }
 

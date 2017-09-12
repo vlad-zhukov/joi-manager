@@ -2,11 +2,11 @@
   "name": "joi-manager",
   "version": "1.0.0",
   "description": "Manage Joi schemas with joy.",
-  "author": "Vlad Zhukov (http://github.com/Vlad-Zhukov)",
+  "author": "Vlad Zhukov (http://github.com/vlad-zhukov)",
   "license": "MIT",
-  "repository": "Vlad-Zhukov/joi-manager",
+  "repository": "vlad-zhukov/joi-manager",
   "bugs": {
-    "url": "https://github.com/Vlad-Zhukov/joi-manager/issues"
+    "url": "https://github.com/vlad-zhukov/joi-manager/issues"
   },
   "main": "./dist/joi-manager.cjs.js",
   "module": "./dist/joi-manager.es.js",
@@ -15,7 +15,7 @@
     "test": "jest",
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier-eslint \"**/*.js\" --write ",
-    "prepublishOnly": "yarn lint && yarn run && yarn test"
+    "prepublishOnly": "yarn lint && yarn build && yarn test"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

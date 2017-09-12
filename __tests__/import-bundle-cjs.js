@@ -1,7 +1,12 @@
-/* eslint-disable no-underscore-dangle */
-
+const Joi = require('joi');
 const JoiManager = require('../dist/joi-manager.cjs');
 
 test('import-bundle-cjs', () => {
-    expect(new JoiManager()).toBeInstanceOf(JoiManager);
+    const joiManager = new JoiManager();
+    expect(joiManager).toBeInstanceOf(JoiManager);
+    expect(joiManager.defaultOptions).toEqual({});
+
+    joiManager.add('number', Joi.number());
+    joiManager.get('number');
+    joiManager.validate(1, 'number');
 });

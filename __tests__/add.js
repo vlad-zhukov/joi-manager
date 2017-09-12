@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-import Joi from 'joi';
+import * as Joi from 'joi';
 import JoiManager from '../src/index';
 
 const NUMBER__ = 12345;
