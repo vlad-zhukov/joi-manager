@@ -1,12 +1,14 @@
 import * as Joi from 'joi';
+import type from './type';
 
 export default class JoiManager {
     /**
      * @param defaultOptions {Object}
      */
     constructor(defaultOptions = {}) {
-        if (defaultOptions === null || typeof defaultOptions !== 'object') {
-            throw new TypeError('Argument "defaultOptions" expected to be an object.');
+        const defaultOptionsType = type(defaultOptions);
+        if (defaultOptionsType !== 'object') {
+            throw new TypeError(`Argument 'defaultOptions' must to be an object, but got: '${defaultOptionsType}'`);
         }
 
         this.defaultOptions = defaultOptions;
@@ -20,16 +22,18 @@ export default class JoiManager {
      * @return {this}
      */
     add(schemaName, schema) {
-        if (typeof schemaName !== 'string') {
-            throw new TypeError(`Argument "schemaName" expected to be a string, but got ${typeof schemaName}.`);
+        const schemaNameType = type(schemaName);
+        if (schemaNameType !== 'string') {
+            throw new TypeError(`Argument 'schemaName' must to be a string, but got '${schemaNameType}'.`);
         }
 
-        if (schema == null) {
-            throw new TypeError('Argument "schema" is required.');
+        const schemaType = type(schema);
+        if (schemaType === 'null' || schemaType === 'undefined') {
+            throw new TypeError(`Argument 'schema' is required, but got: '${schemaType}'`);
         }
 
         if ({}.hasOwnProperty.call(this.schemaList, schemaName)) {
-            throw new Error(`Schema with name "${schemaName}" already exists in the list.`);
+            throw new Error(`Schema with name '${schemaName}' has been already added to the list.`);
         }
 
         this.schemaList[schemaName] = schema;
@@ -42,12 +46,13 @@ export default class JoiManager {
      * @return {Function|Object}
      */
     get(schemaName) {
-        if (typeof schemaName !== 'string') {
-            throw new TypeError(`Argument "schemaName" expected to be a string, but got ${typeof schemaName}.`);
+        const schemaNameType = type(schemaName);
+        if (schemaNameType !== 'string') {
+            throw new TypeError(`Argument 'schemaName' must to be a string, but got '${schemaNameType}'.`);
         }
 
         if (!{}.hasOwnProperty.call(this.schemaList, schemaName)) {
-            throw new Error(`Schema with name "${schemaName}" was not found in the list.`);
+            throw new Error(`Schema with name '${schemaName}' has been already added to the list.`);
         }
 
         return this.schemaList[schemaName];
@@ -61,8 +66,14 @@ export default class JoiManager {
      * @return {*}
      */
     validate(value, schemaName, options = {}) {
-        if (options === null || typeof options !== 'object') {
-            throw new TypeError('Argument "options" expected to be an object.');
+        const schemaNameType = type(schemaName);
+        if (schemaNameType !== 'string') {
+            throw new TypeError(`Argument 'schemaName' must to be a string, but got '${schemaNameType}'.`);
+        }
+
+        const optionsType = type(options);
+        if (optionsType !== 'object') {
+            throw new TypeError(`Argument 'options' must to be an object, but got '${optionsType}'.`);
         }
 
         const result = Joi.validate(value, this.get(schemaName), Object.assign({}, this.defaultOptions, options));
