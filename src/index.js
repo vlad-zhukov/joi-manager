@@ -60,12 +60,12 @@ export default class JoiManager {
 
     /**
      * Wrapper around Joi.validate() that throws on validation errors.
-     * @param value {*}
      * @param schemaName {String}
+     * @param value {*}
      * @param options {Object}
      * @return {*}
      */
-    validate(value, schemaName, options = {}) {
+    validate(schemaName, value, options = {}) {
         const schemaNameType = type(schemaName);
         if (schemaNameType !== 'string') {
             throw new TypeError(`Argument 'schemaName' must to be a string, but got '${schemaNameType}'.`);

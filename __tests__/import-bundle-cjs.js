@@ -8,5 +8,5 @@ test('import-bundle-cjs', () => {
 
     joiManager.add('number', Joi.number());
     joiManager.get('number');
-    joiManager.validate(1, 'number');
+    joiManager.validate('number', 1);
 });

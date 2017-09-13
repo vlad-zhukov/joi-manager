@@ -19,7 +19,7 @@ describe('JoiManager#validate()', () => {
         const joiManager = new JoiManager();
         joiManager.add(schemaName, schema);
 
-        const value = joiManager.validate(validValue, schemaName);
+        const value = joiManager.validate(schemaName, validValue);
         expect(value).toBe(validValue);
     });
 
@@ -27,22 +27,22 @@ describe('JoiManager#validate()', () => {
         const joiManager = new JoiManager();
         joiManager.add(schemaName, schema);
 
-        expect(() => joiManager.validate(STRING__, schemaName)).toThrow(Error);
+        expect(() => joiManager.validate(schemaName, STRING__)).toThrow(Error);
     });
 
     it('should throw if a schema with provided name was not added to the list', () => {
         const joiManager = new JoiManager();
 
-        expect(() => joiManager.validate(NUMBER__, schemaName)).toThrow(Error);
+        expect(() => joiManager.validate(schemaName, NUMBER__)).toThrow(Error);
     });
 
     it('should throw if "defaultOptions" is not an object', () => {
         const joiManager = new JoiManager();
         joiManager.add(schemaName, schema);
 
-        expect(() => joiManager.validate(NUMBER__, schemaName, NULL__)).toThrow(TypeError);
-        expect(() => joiManager.validate(NUMBER__, schemaName, NUMBER__)).toThrow(TypeError);
-        expect(() => joiManager.validate(NUMBER__, schemaName, STRING__)).toThrow(TypeError);
-        expect(() => joiManager.validate(NUMBER__, schemaName, SYMBOL__)).toThrow(TypeError);
+        expect(() => joiManager.validate(schemaName, NUMBER__, NULL__)).toThrow(TypeError);
+        expect(() => joiManager.validate(schemaName, NUMBER__, NUMBER__)).toThrow(TypeError);
+        expect(() => joiManager.validate(schemaName, NUMBER__, STRING__)).toThrow(TypeError);
+        expect(() => joiManager.validate(schemaName, NUMBER__, SYMBOL__)).toThrow(TypeError);
     });
 });
